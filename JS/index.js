@@ -1,7 +1,3 @@
-// const startButton = document.getElementById('startButton');
-// const stopButton = document.getElementById('stopButton');
-// const pauseButton = document.getElementById('pauseButton');
-// const resetButton = document.getElementById('resetButton');
 const timerDisplay = document.getElementById("timerDisplay");
 const inputHours = document.getElementById("inputHours");
 const inputMinutes = document.getElementById("inputMinutes");
