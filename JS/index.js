@@ -2,15 +2,15 @@
 // const stopButton = document.getElementById('stopButton');
 // const pauseButton = document.getElementById('pauseButton');
 // const resetButton = document.getElementById('resetButton');
-
+const timerDisplay = document.getElementById("timerDisplay");
 const inputHours = document.getElementById("inputHours");
 const inputMinutes = document.getElementById("inputMinutes");
+const timerNameDisplay = document.getElementById("timerName");
 
 let timerName = '';
 let duration = 0;
 let remaining = 0;
 let isPaused = false;
-
 let interval = null;
 
 function setTimer(){
