@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mindfulness Timer</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mindfulness Timer</h1>
+    </header>
+
+    <div class="sidebar">
+      <button>Study</button>
+      <button>Gym</button>
+      <button>+ Add</button>
+    </div>
+    
+    <main class="main-content">
+      <div id="timerName" class="timer-name">Timer Name (Topic)</div>
+      <div id="timerDisplay" class="timer-display">00:00:00</div>
+      <div class="timer-buttons">
+        <button id="stopBtn">Stop</button>
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </main>
+
+    <aside class="controls">
+      <div class="input-group">
+        <label for="inputName">Set Timer Name</label>
+        <input type="text" id="inputName" placeholder="Enter Name">
+      </div>
+      <div class="input-group">
+        <label>Set Duration (HH:MM:SS)</label>
+        <input type="number" id="inputHours" placeholder="Hours">
+        <input type="number" id="inputMinutes" placeholder="Minutes">
+        <input type="number" id="inputSeconds" placeholder="Seconds">
+      </div>
+      <button id="setTimerBtn" class="create-btn">Create</button>
+    </aside>
+  </div>
+  <script src="../JS/index.js"></script>
+</body>
+</html>

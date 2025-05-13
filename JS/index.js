@@ -1,6 +1,8 @@
 const timerDisplay = document.getElementById("timerDisplay");
+const inputName = document.getElementById("inputName");
 const inputHours = document.getElementById("inputHours");
 const inputMinutes = document.getElementById("inputMinutes");
+const inputSeconds = document.getElementById("inputSeconds");
 const timerNameDisplay = document.getElementById("timerName");
 
 let timerName = '';
@@ -13,37 +15,35 @@ function setTimer(){
     timerName = inputName.value.trim();
     const hours = parseInt(inputHours.value) || 0;
     const minutes = parseInt(inputMinutes.value) || 0;
-    duration = (hours * 3600) + (minutes * 60);
+    const seconds = parseInt(inputSeconds.value) || 0;
+
+    duration = (hours * 3600) + (minutes * 60) + seconds;
     remaining = duration;
 
-    if (!timerName || duration <= 0) {
+    if (timerName ==='' || duration <= 0) {
         alert("Please enter a valid timer name and time.");
         return;
     }
+
     timerNameDisplay.textContent = timerName;
     updateDisplay();
 }
 
 function startTimer(){
-    if (remaining <= 0){
-        return;
-    }
-    if (interval){
-        return;
-    }
+    if (remaining <= 0 || interval) return;
 
-    interval = setInterval(() =>{
-        if(!isPaused){
+    interval = setInterval(() => {
+        if (!isPaused) {
             remaining--;
             updateDisplay();
-            if(remaining <=0){
+
+            if (remaining <= 0) {
                 clearInterval(interval);
                 interval = null;
-                alert("Time is Up");
+                alert("Time is up!");
             }
         }
-    },1000 );
-
+    }, 1000);
 }
 
 function updateDisplay(){
@@ -51,7 +51,7 @@ function updateDisplay(){
     const mins = Math.floor((remaining % 3600) / 60);
     const secs = remaining % 60;
 
-    timerDisplay.textContent = `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    timerDisplay.textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 }
 
 function pauseTimer() {
@@ -65,7 +65,7 @@ function stopTimer() {
     updateDisplay();
 }
 
-function resetTimer (){
+function resetTimer() {
     clearInterval(interval);
     interval = null;
     remaining = duration;
