@@ -1,40 +1,123 @@
 /* styles.css */
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
   margin: 0;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #111;
+  color: #c8a2ff;
 }
 
-.todo-container {
-  background-color: #fff;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  border: 2px solid #c8a2ff;
+  border-radius: 20px;
+}
+
+header {
+  grid-column: 1 / -1;
+  text-align: right;
+  padding: 10px 20px;
+  color: #ffb3b3;
+  font-size: 1.5em;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border: 2px solid #c8a2ff;
+  border-radius: 20px;
+}
+
+.sidebar button {
+  background: transparent;
+  border: 1px solid #c8a2ff;
+  color: #c8a2ff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.timer-name {
+  border: 2px solid #c8a2ff;
+  border-radius: 15px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.timer-display {
+  border: 2px solid #c8a2ff;
+  border-radius: 20px;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 2em;
+  text-align: center;
   width: 300px;
 }
 
-h1 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 20px;
+.timer-buttons {
+  display: flex;
+  gap: 15px;
 }
 
-.todo-list {
-  list-style-type: none;
-  padding: 0;
+.timer-buttons button {
+  background: transparent;
+  border: 1px solid #c8a2ff;
+  color: #c8a2ff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
 }
 
-.todo-list li {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #34495e;
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border: 2px solid #c8a2ff;
+  border-radius: 20px;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  padding: 10px;
+  border: 1px solid #c8a2ff;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+}
+
+.create-btn {
+  background: transparent;
+  border: 1px solid #c8a2ff;
+  color: #c8a2ff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
 }
