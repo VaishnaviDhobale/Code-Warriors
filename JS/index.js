@@ -1,7 +1,7 @@
-const startButton = document.getElementById('startButton');
-const stopButton = document.getElementById('stopButton');
-const pauseButton = document.getElementById('pauseButton');
-const resetButton = document.getElementById('resetButton');
+// const startButton = document.getElementById('startButton');
+// const stopButton = document.getElementById('stopButton');
+// const pauseButton = document.getElementById('pauseButton');
+// const resetButton = document.getElementById('resetButton');
 
 const inputHours = document.getElementById("inputHours");
 const inputMinutes = document.getElementById("inputMinutes");
@@ -10,7 +10,7 @@ let timerName = '';
 let duration = 0;
 let remaining = 0;
 let isPaused = false;
-let isReset = false;
+
 let interval = null;
 
 function setTimer(){
@@ -55,7 +55,7 @@ function updateDisplay(){
     const mins = Math.floor((remaining % 3600) / 60);
     const secs = remaining % 60;
 
-    const output = `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
+    timerDisplay.textContent = `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 }
 
 function pauseTimer() {
@@ -75,3 +75,9 @@ function resetTimer (){
     remaining = duration;
     updateDisplay();
 }
+
+document.getElementById("setTimerBtn").addEventListener("click", setTimer);
+document.getElementById("startBtn").addEventListener("click", startTimer);
+document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
+document.getElementById("stopBtn").addEventListener("click", stopTimer);
+document.getElementById("resetBtn").addEventListener("click", resetTimer);
